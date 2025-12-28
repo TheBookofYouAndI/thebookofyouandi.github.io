@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kennedy Island – Families</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .family-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: black;
+      transition: transform 0.2s;
+    }
+
+    .family-card:hover {
+      transform: scale(1.03);
+    }
+
+    .family-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Families of Kennedy Island</h1>
+
+<div class="family-grid">
+
+  <a href="harrington/index.html" class="family-card">
+    <img src="../assets/images/families/harrington.jpg" alt="Harrington Family">
+    <h3>The Harringtons</h3>
+  </a>
+
+  <a href="morgan/index.html" class="family-card">
+    <img src="../assets/images/families/morgan.jpg" alt="Morgan Family">
+    <h3>The Morgans</h3>
+  </a>
+
+</div>
+
+</body>
+</html>
