@@ -33,6 +33,15 @@
     }
   </style>
 </head>
+  <style>
+    .map-label {
+      font-family: 'Georgia', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2c3e50;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    }
+  </style>
 
 <body>
 
@@ -58,23 +67,34 @@
 L.imageOverlay(
   'images/kennedy-island.png',
   islandBounds,
-  { opacity: 0.95 }
+  {
+    opacity: 0.92,
+    interactive: true
+  }
 ).addTo(map);
 
 
-  // Add map tiles (this is the actual map imagery)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
+
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap & CARTO',
+  subdomains: 'abcd',
+  maxZoom: 19
+}).addTo(map);
 
   // Example marker (you can change this later)
   L.marker([32.8, -80.0])
     .addTo(map)
     .bindPopup('<b>Kennedy Island</b><br>Your story begins here.');
   L.marker([32.25, -80.75])
-  .addTo(map)
-  .bindPopup('<b>Harrington House</b><br>Old family estate.');
+    .addTo(map)
+    .bindPopup('<b>Harrington House</b><br>Old family estate.');
+  L.marker([32.53, -80.43], {
+    icon: L.divIcon({
+      className: 'map-label',
+      html: 'Kennedy Island'
+  })
+}).addTo(map);
+
 </script>
 
 </body>
